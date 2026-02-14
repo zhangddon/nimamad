@@ -1,0 +1,37 @@
+[
+  {
+    "symbol": "TSLA",
+    "score": 0.2857,
+    "action": "BUY",
+    "confidence": 0.9,
+    "reason": "@marketsnap: TSLA launch event chatter sparks bullish sentiment."
+  },
+  {
+    "symbol": "NVDA",
+    "score": 0.25,
+    "action": "BUY",
+    "confidence": 0.9,
+    "reason": "@technews: NVDA reports record demand and beats quarterly expectations."
+  },
+  {
+    "symbol": "BTC",
+    "score": -0.1111,
+    "action": "SELL",
+    "confidence": 0.9,
+    "reason": "@cryptodaily: BTC hit by hack rumors, market sentiment turns cautious."
+  },
+  {
+    "symbol": "ETH",
+    "score": 0.3333,
+    "action": "BUY",
+    "confidence": 0.9,
+    "reason": "@chainalpha: ETH upgrade approved, developers expect long-term network growth."
+  },
+  {
+    "symbol": "DOGE",
+    "score": 0.0,
+    "action": "HOLD",
+    "confidence": 0.1,
+    "reason": "no significant mentions"
+  }
+]
