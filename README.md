@@ -162,3 +162,11 @@
 1) 适配你赛道的“30天内容日历”；
 2) 三平台统一的发布清单（可复制）；
 3) 一套可执行的“半自动发布 SOP”。
+
+## 8. 立即运行：一键生成文章
+
+```bash
+python3 writer_agent.py --topic "AI自媒体变现" --output outputs/article_wechat.md
+```
+
+运行后会在 `outputs/article_wechat.md` 生成一篇可直接用于公众号的文章初稿。
