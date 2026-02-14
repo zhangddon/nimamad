@@ -44,7 +44,7 @@ NEGATIVE_WORDS = {
     "misses",
 }
 
-DEFAULT_WATCHLIST = ["TSLA", "NVDA", "BTC", "ETH", "DOGE"]
+DEFAULT_WATCHLIST = ["TSLA", "NVDA", "AAPL", "MSFT", "META"]
 
 
 @dataclass
@@ -149,7 +149,7 @@ def render_article(trends: list[TrendItem], signals: list[MarketSignal]) -> str:
 ## 1) 热门趋势摘要
 {hot}
 
-## 2) 情绪驱动信号（股票 / 虚拟币）
+## 2) 情绪驱动信号（股票）
 {picks_md}
 
 ## 3) 可执行写作方向
@@ -159,7 +159,7 @@ def render_article(trends: list[TrendItem], signals: list[MarketSignal]) -> str:
 
 ## 4) 风险提示
 - 热点驱动策略容易出现假突破与消息反转；
-- 高波动资产（尤其虚拟币）请降低仓位；
+- 单一热点容易反转，仓位必须分散并设置止损；
 - 严禁将模型输出当作确定性盈利信号。
 """
 
@@ -201,10 +201,10 @@ def generate_mock_trends(seed: int, count: int = 12) -> list[TrendItem]:
     templates = [
         ("x", "@elonmusk", "New partnership discussion around AI chips and robotics."),
         ("x", "@techinsider", "NVDA beats expectations with strong growth and record demand."),
-        ("x", "@cryptowhale", "BTC faces investigation rumor, traders remain cautious."),
-        ("x", "@marketwatcher", "ETH upgrade approved by key validators this week."),
+        ("x", "@marketwatcher", "AAPL supplier upgrade may improve shipment outlook this quarter."),
         ("x", "@macroalpha", "TSLA launch event may drive sentiment surge."),
-        ("x", "@coinalert", "DOGE sees sudden bullish chatter after influencer post."),
+        ("x", "@streetalpha", "MSFT announces enterprise AI partnership and cloud growth guidance."),
+        ("x", "@growthdaily", "META advertising recovery beats analyst expectations."),
     ]
 
     output: list[TrendItem] = []
@@ -222,7 +222,7 @@ def generate_mock_trends(seed: int, count: int = 12) -> list[TrendItem]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Autopilot trend agent")
+    parser = argparse.ArgumentParser(description="Autopilot trend agent (content + stock signals)")
     parser.add_argument("--input", help="JSON trend input path")
     parser.add_argument("--outdir", default="outputs", help="Output directory")
     parser.add_argument("--watchlist", nargs="*", default=DEFAULT_WATCHLIST)

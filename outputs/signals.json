@@ -1,10 +1,10 @@
 [
   {
     "symbol": "TSLA",
-    "score": 0.2857,
-    "action": "BUY",
-    "confidence": 0.9,
-    "reason": "@marketsnap: TSLA launch event chatter sparks bullish sentiment."
+    "score": 0.0,
+    "action": "HOLD",
+    "confidence": 0.1,
+    "reason": "no significant mentions"
   },
   {
     "symbol": "NVDA",
@@ -14,24 +14,24 @@
     "reason": "@technews: NVDA reports record demand and beats quarterly expectations."
   },
   {
-    "symbol": "BTC",
-    "score": -0.1111,
-    "action": "SELL",
-    "confidence": 0.9,
-    "reason": "@cryptodaily: BTC hit by hack rumors, market sentiment turns cautious."
-  },
-  {
-    "symbol": "ETH",
-    "score": 0.3333,
+    "symbol": "AAPL",
+    "score": 0.1111,
     "action": "BUY",
     "confidence": 0.9,
-    "reason": "@chainalpha: ETH upgrade approved, developers expect long-term network growth."
+    "reason": "@marketwatcher: AAPL supplier upgrade may improve shipment outlook this quarter."
   },
   {
-    "symbol": "DOGE",
-    "score": 0.0,
-    "action": "HOLD",
-    "confidence": 0.1,
-    "reason": "no significant mentions"
+    "symbol": "MSFT",
+    "score": 0.0833,
+    "action": "BUY",
+    "confidence": 0.77,
+    "reason": "@cloudfocus: MSFT enterprise AI expansion is viewed as a long-term growth driver."
+  },
+  {
+    "symbol": "META",
+    "score": 0.125,
+    "action": "BUY",
+    "confidence": 0.9,
+    "reason": "@adintel: META advertising rebound beats analyst estimates this month."
   }
 ]
