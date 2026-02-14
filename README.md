@@ -3,13 +3,29 @@
 该项目支持：
 - 自动读取热点文本并生成文章；
 - 生成美股情绪信号与订单计划（默认 dry-run）；
-- 一键启动控制台（按钮启动 Agent）；
-- 打包完整运行文件，便于上传服务器。
+- 本地/服务器一键启动控制台；
+- 打包完整运行环境（可附带 `.venv`）并快速部署。
 
-## 1) 一键启动（本地/服务器）
+## 1) 本地一键启动（推荐）
+
+方式 A（根目录按钮脚本）：
+
+```bash
+bash start_agent.sh
+```
+
+方式 B（脚本目录）：
 
 ```bash
 bash scripts/one_click_start.sh
+```
+
+停止：
+
+```bash
+bash stop_agent.sh
+# 或
+bash scripts/one_click_stop.sh
 ```
 
 启动后访问：
@@ -32,7 +48,7 @@ python3 autopilot_agent.py --input data/hot_trends.json --outdir outputs
 - `outputs/signals.json`
 - `outputs/orders.json`
 
-## 3) 打包完整文件（可上传部署）
+## 3) 打包完整环境（支持本地离线快速部署）
 
 ```bash
 bash scripts/package_release.sh
@@ -41,13 +57,17 @@ bash scripts/package_release.sh
 将生成：
 - `dist/autopilot_agent_YYYYMMDD_HHMMSS.tar.gz`
 
-解压后执行：
+说明：
+- 若当前目录存在 `.venv`，打包脚本会自动把 `.venv` 一并打进压缩包（适合同系统快速迁移）。
+- 若目标机器系统差异较大，建议删除包内 `.venv` 后再执行 `start.sh`，自动重新创建虚拟环境。
+
+解压后启动：
 
 ```bash
+tar -xzf dist/autopilot_agent_YYYYMMDD_HHMMSS.tar.gz
+cd dist/autopilot_agent_YYYYMMDD_HHMMSS
 bash start.sh
 ```
-
-即可启动控制台与 Agent 管理页面。
 
 ## 4) Docker 一键部署（可选）
 
@@ -70,7 +90,7 @@ rsync -avz --exclude '.git' ./ root@101.35.254.128:/opt/autopilot-agent/
 ```bash
 ssh root@101.35.254.128
 cd /opt/autopilot-agent
-bash scripts/one_click_start.sh
+bash start_agent.sh
 ```
 
 ## 6) 参数示例
