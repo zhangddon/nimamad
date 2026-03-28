@@ -1,0 +1,4 @@
+version: 1
+display_name: Neural Highlight Montage
+short_description: Auto-detect highlights and cut montage videos.
+default_prompt: Detect exciting moments in raw footage with neural scoring and produce an automatic highlight montage video.
